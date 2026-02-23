@@ -14,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Custom CSS for better styling (mobile-friendly)
 st.markdown("""
     <style>
     .main {
@@ -22,12 +22,18 @@ st.markdown("""
     }
     .stTextInput > div > div > input {
         border-radius: 20px;
+        font-size: 16px !important;
     }
     .chat-message {
-        padding: 1.5rem;
+        padding: 1rem;
         border-radius: 10px;
         margin-bottom: 1rem;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        color: #000000 !important;
+        font-size: 16px !important;
+    }
+    .chat-message * {
+        color: #000000 !important;
     }
     .user-message {
         background-color: #e3f2fd;
@@ -36,6 +42,19 @@ st.markdown("""
     .bot-message {
         background-color: #ffffff;
         border-left: 4px solid #4caf50;
+    }
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .chat-message {
+            padding: 0.8rem;
+            font-size: 15px !important;
+        }
+        h1 {
+            font-size: 1.5rem !important;
+        }
+        h3 {
+            font-size: 1.1rem !important;
+        }
     }
     </style>
 """, unsafe_allow_html=True)
